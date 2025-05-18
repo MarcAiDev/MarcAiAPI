@@ -1,14 +1,12 @@
 ﻿using FluentValidation;
-using MarcAiAPI.Domain.Entities;
 
-namespace MarcAiAPI.Domain.Interfaces
+namespace MarcAiAPI.Domain.Interfaces;
+
+public interface IBaseService<TEntity>
 {
-    public interface IBaseService<TEntity> where TEntity : BaseEntity
-    {
-        TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
-        void Delete(int id);
-        IList<TEntity> Get();
-        TEntity GetById(int id);
-        TEntity Update<TValidator>(TEntity obj)where TValidator : AbstractValidator<TEntity>;
-    }
+    TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+    void Delete(int id);
+    IList<TEntity> Get();
+    TEntity GetById(int id);
+    TEntity Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
 }

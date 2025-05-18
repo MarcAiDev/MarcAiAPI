@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MarcAiAPI.Domain\MarcAiAPI.Domain.csproj" />
+        <ProjectReference Include="..\MarcAiAPI.Domain\MarcAiAPI.Domain.csproj"/>
     </ItemGroup>
 
 </Project>
