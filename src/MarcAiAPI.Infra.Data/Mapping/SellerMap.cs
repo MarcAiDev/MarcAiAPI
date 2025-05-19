@@ -15,16 +15,6 @@ public class SellerMap : IEntityTypeConfiguration<SellerEntity>
         builder.Property(s => s.IsVerified)
             .IsRequired()
             .HasDefaultValue(false);
-
-        builder
-            .HasOne(s => s.Person)
-            .WithMany()
-            .OnDelete(DeleteBehavior.Restrict);
-
-        builder
-            .HasMany(s => s.Stores)
-            .WithOne(store => store.Seller)
-            .HasForeignKey("StoreId")
-            .OnDelete(DeleteBehavior.Cascade);
+        
     }
 }

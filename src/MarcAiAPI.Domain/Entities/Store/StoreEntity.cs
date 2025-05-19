@@ -8,6 +8,7 @@ namespace MarcAiAPI.Domain.Entities.Store;
 public class StoreEntity
 {
     public long StoreId { get; set; }
+    public long SellerId { get; set; }
     public string CpfCnpj { get; set; }
     public string StoreName { get; set; }
     public string StoreDescription { get; set; }

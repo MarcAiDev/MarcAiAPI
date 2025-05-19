@@ -32,17 +32,5 @@ public class PersonMap : IEntityTypeConfiguration<PersonEntity>
 
         builder.Property(p => p.IsSeller)
             .IsRequired();
-
-        // 1:N → Reviews
-        builder.HasMany(p => p.Reviews)
-            .WithOne(r => r.Person)
-            .HasForeignKey("StoreId")
-            .OnDelete(DeleteBehavior.Cascade);
-
-        // 1:1 → Seller
-        builder.HasOne(p => p.Seller)
-            .WithOne(s => s.Person)
-            .HasForeignKey("PersonId")
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

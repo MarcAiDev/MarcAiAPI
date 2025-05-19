@@ -13,6 +13,6 @@ public class PersonEntity
     public string Password { get; set; }
     public bool IsSeller { get; set; }
 
-    public ICollection<ReviewEntity> Reviews { get; set; }
-    public SellerEntity Seller { get; set; }
+    public ICollection<ReviewEntity>? Reviews { get; set; } = new List<ReviewEntity>();
+    public SellerEntity? Seller { get; set; }
 }

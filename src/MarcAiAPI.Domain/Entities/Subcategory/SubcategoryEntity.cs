@@ -8,5 +8,5 @@ public class SubcategoryEntity
     public string SubcategoryName { get; set; }
     public string SubcategoryDescription { get; set; }
 
-    public ICollection<CategoryEntity> Categories { get; set; }
+    public ICollection<CategoryEntity> Categories { get; set; } = new List<CategoryEntity>();
 }

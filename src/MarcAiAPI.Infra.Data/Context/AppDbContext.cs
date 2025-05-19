@@ -10,11 +10,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MarcAiAPI.Infra.Data.Context;
 
-public class SqlServerContext : DbContext
+public class AppDbContext : DbContext
 {
-    public SqlServerContext(DbContextOptions options) : base(options)
-    {
-    }
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    
 
     public DbSet<PersonEntity> Person { get; set; }
     

@@ -9,6 +9,6 @@ public class CategoryEntity
     public string CategoryName { get; set; }
     public string CategoryDescription { get; set; }
 
-    public ICollection<SubcategoryEntity> Subcategories { get; set; }
-    public ICollection<StoreEntity> Stores { get; set; }
+    public ICollection<SubcategoryEntity>? Subcategories { get; set; } = new List<SubcategoryEntity>();
+    public ICollection<StoreEntity>? Stores { get; set; } = new List<StoreEntity>();
 }

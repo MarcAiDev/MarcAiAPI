@@ -11,38 +11,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b78db76-7430-4a76-8283-80196ba4a951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Category/CategoryEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Review/ReviewEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/ExternalStoreEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/InternalStoreEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StorePhoto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Subcategory/SubcategoryEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/CategoryMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/ReviewMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StorePhotoMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SubCategoryMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/AppDbContextFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.src/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Controllers/PersonAccount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/Controllers/PersonAccount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Dockerfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/BaseEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Category/CategoryEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Category/CategoryEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Person/PersonEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Person/PersonEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/IBaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/IBaseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/IBaseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/IBaseService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/MarcAiAPI.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/MarcAiAPI.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/SqlServerContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/SqlServerContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Review/ReviewEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Review/ReviewEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StorePhoto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StorePhoto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Subcategory/SubcategoryEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Subcategory/SubcategoryEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/SqlServerContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/CategoryMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/CategoryMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/PersonMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/PersonMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/ReviewMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/ReviewMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StorePhotoMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StorePhotoMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SubCategoryMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SubCategoryMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/MarcAiAPI.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/MarcAiAPI.Infra.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Repository/BaseRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/BaseService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/MarcAiAPI.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Service/MarcAiAPI.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/Validators/PersonAccountValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Service/Validators/PersonAccountValidator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +88,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.MarcAiAPI: https">
+  <component name="RunManager" selected=".NET Launch Settings Profile.MarcAiAPI: http">
     <configuration name="MarcAiAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -182,6 +174,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3b78db76-7430-4a76-8283-80196ba4a951" name="Changes" comment="" />
@@ -195,6 +188,8 @@
       <workItem from="1746929558095" duration="77000" />
       <workItem from="1747517984712" duration="9040000" />
       <workItem from="1747534477388" duration="298000" />
+      <workItem from="1747590422123" duration="25000" />
+      <workItem from="1747590558112" duration="7751000" />
     </task>
     <servers />
   </component>
@@ -210,23 +205,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

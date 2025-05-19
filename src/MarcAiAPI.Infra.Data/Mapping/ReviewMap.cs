@@ -1,3 +1,4 @@
+using MarcAiAPI.Domain.Entities.Person;
 using MarcAiAPI.Domain.Entities.Review;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -26,15 +27,5 @@ public class ReviewMap : IEntityTypeConfiguration<ReviewEntity>
         builder.Property(x => x.ReviewText)
             .IsRequired()
             .HasMaxLength(2000);
-
-        builder.HasOne(r => r.Person)
-            .WithMany(p => p.Reviews)
-            .HasForeignKey("PersonId")
-            .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasOne(r => r.Store)
-            .WithMany(p => p.Reviews)
-            .HasForeignKey("StoreId")
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

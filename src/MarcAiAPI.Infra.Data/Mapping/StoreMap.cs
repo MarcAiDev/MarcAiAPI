@@ -30,43 +30,5 @@ public class StoreMap : IEntityTypeConfiguration<StoreEntity>
 
         builder.Property(s => s.IsOpen)
             .IsRequired();
-
-        builder.HasOne(s => s.Seller)
-            .WithMany(seller => seller.Stores)
-            .HasForeignKey("SellerId")
-            .OnDelete(DeleteBehavior.Restrict);
-
-        builder.HasMany(s => s.Reviews)
-            .WithOne(r => r.Store)
-            .HasForeignKey("ReviewId")
-            .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasMany(s => s.Categories)
-            .WithMany(c => c.Stores)
-            .UsingEntity<Dictionary<string, object>>(
-                "StoreCategory",
-                j => j
-                    .HasOne<CategoryEntity>()
-                    .WithMany()
-                    .HasForeignKey("CategoryId"),
-                j => j
-                    .HasOne<StoreEntity>()
-                    .WithMany()
-                    .HasForeignKey("StoreId"),
-                j =>
-                {
-                    j.HasKey("StoreId", "CategoryId");
-                    j.ToTable("StoreCategories");
-                });
-
-        builder.HasOne(s => s.StoreAddress)
-            .WithOne(a => a.Store)
-            .HasForeignKey<StoreAddressEntity>("AddressId")
-            .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasMany(s => s.Photos)
-            .WithOne(p => p.Store)
-            .HasForeignKey("PhotoId")
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

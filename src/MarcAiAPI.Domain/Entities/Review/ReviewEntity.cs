@@ -6,7 +6,8 @@ namespace MarcAiAPI.Domain.Entities.Review;
 public class ReviewEntity
 {
     public long ReviewId { get; set; }
-    
+    public long PersonId { get; set; }
+    public long StoreId { get; set; }
     public decimal ReviewRating { get; set; }
     public string ReviewTitle { get; set; }
     public string ReviewText { get; set; }

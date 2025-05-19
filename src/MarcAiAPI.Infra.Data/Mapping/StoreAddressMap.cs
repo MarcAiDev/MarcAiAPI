@@ -42,10 +42,5 @@ public class StoreAddressMap : IEntityTypeConfiguration<StoreAddressEntity>
 
         builder.Property(a => a.Longitude)
             .IsRequired();
-
-        builder.HasOne(a => a.Store)
-            .WithOne(a => a.StoreAddress)
-            .HasForeignKey("StoreId")
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }
