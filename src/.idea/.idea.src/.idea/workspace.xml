@@ -11,30 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b78db76-7430-4a76-8283-80196ba4a951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/AppDbContextFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.src/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Category/CategoryEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Category/CategoryEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Person/PersonEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Person/PersonEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Review/ReviewEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Review/ReviewEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StorePhoto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StorePhoto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Subcategory/SubcategoryEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Subcategory/SubcategoryEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/SqlServerContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/CategoryMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/CategoryMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/PersonMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/PersonMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/ReviewMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/ReviewMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StorePhotoMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StorePhotoMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SubCategoryMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SubCategoryMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/MarcAiAPI.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/MarcAiAPI.Infra.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,24 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.MarcAiAPI: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.MarcAiAPI: https.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.environmentSetup&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.MarcAiAPI: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.MarcAiAPI: http.executor": "Run",
+    ".NET Launch Settings Profile.MarcAiAPI: https.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.environmentSetup",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MarcAiAPI: http">
     <configuration name="MarcAiAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" />
@@ -190,6 +168,7 @@
       <workItem from="1747534477388" duration="298000" />
       <workItem from="1747590422123" duration="25000" />
       <workItem from="1747590558112" duration="7751000" />
+      <workItem from="1747878696916" duration="312000" />
     </task>
     <servers />
   </component>
