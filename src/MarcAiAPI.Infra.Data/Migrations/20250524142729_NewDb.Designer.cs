@@ -3,6 +3,7 @@ using System;
 using MarcAiAPI.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MarcAiAPI.Infra.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250524142729_NewDb")]
+    partial class NewDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,6 +82,51 @@ namespace MarcAiAPI.Infra.Data.Migrations
                     b.HasIndex("StoreId1");
 
                     b.ToTable("StoreAddress", (string)null);
+                });
+
+            modelBuilder.Entity("MarcAiAPI.Domain.Entities.Person.UserEntity", b =>
+                {
+                    b.Property<long>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("UserId"));
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("character varying(15)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(11)
+                        .HasColumnType("character varying(11)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
+                    b.Property<long?>("SellerId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("MarcAiAPI.Domain.Entities.Store.MarketplaceEntity", b =>
@@ -160,57 +208,12 @@ namespace MarcAiAPI.Infra.Data.Migrations
                     b.ToTable("Stores", (string)null);
                 });
 
-            modelBuilder.Entity("MarcAiAPI.Domain.Entities.User.UserEntity", b =>
-                {
-                    b.Property<long>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("UserId"));
-
-                    b.Property<string>("Cpf")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("character varying(15)");
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasMaxLength(11)
-                        .HasColumnType("character varying(11)");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("text");
-
-                    b.Property<long?>("SellerId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users", (string)null);
-                });
-
             modelBuilder.Entity("MarcAiAPI.Domain.Entities.Address.StoreAddressEntity", b =>
                 {
                     b.HasOne("MarcAiAPI.Domain.Entities.Store.StoreEntity", null)
                         .WithOne("StoreAddress")
                         .HasForeignKey("MarcAiAPI.Domain.Entities.Address.StoreAddressEntity", "StoreId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MarcAiAPI.Domain.Entities.Store.StoreEntity", "Store")
@@ -228,7 +231,7 @@ namespace MarcAiAPI.Infra.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MarcAiAPI.Domain.Entities.User.UserEntity", "Seller")
+                    b.HasOne("MarcAiAPI.Domain.Entities.Person.UserEntity", "Seller")
                         .WithMany("Stores")
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -239,6 +242,11 @@ namespace MarcAiAPI.Infra.Data.Migrations
                     b.Navigation("Seller");
                 });
 
+            modelBuilder.Entity("MarcAiAPI.Domain.Entities.Person.UserEntity", b =>
+                {
+                    b.Navigation("Stores");
+                });
+
             modelBuilder.Entity("MarcAiAPI.Domain.Entities.Store.MarketplaceEntity", b =>
                 {
                     b.Navigation("Stores");
@@ -247,11 +255,6 @@ namespace MarcAiAPI.Infra.Data.Migrations
             modelBuilder.Entity("MarcAiAPI.Domain.Entities.Store.StoreEntity", b =>
                 {
                     b.Navigation("StoreAddress");
-                });
-
-            modelBuilder.Entity("MarcAiAPI.Domain.Entities.User.UserEntity", b =>
-                {
-                    b.Navigation("Stores");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,3 +1,5 @@
+using MarcAiAPI.Domain.DTOs;
+using MarcAiAPI.Domain.Entities.Address;
 using MarcAiAPI.Domain.Entities.Store;
 using MarcAiAPI.Domain.Interfaces.Store;
 using Microsoft.AspNetCore.Mvc;
@@ -15,39 +17,39 @@ namespace MarcAiAPI.Application.Controllers.Store
             _service = service;
         }
 
-        [HttpGet("GetAllStores")]
-        public IActionResult GetAllStores()
+        [HttpGet("Store")]
+        public async Task<IActionResult> GetStore([FromQuery]long? id, long? marketplaceId, long? sellerId)
         {
-            var result = _service.GetAllStoresAsync();
+            var result = await _service.GetStoreAsync(id, marketplaceId, sellerId);
             return Ok(result);
         }
 
-        [HttpGet("GetStoreById/{id}")]
-        public IActionResult GetStoreById([FromQuery]long id)
+        [HttpGet("Address")]
+        public async Task<IActionResult> GetAddress([FromQuery] long storeId)
         {
-            var result = _service.GetStoreAsync(id);
+            var result = await _service.GetAddressAsync(storeId);
             return Ok(result);
         }
 
-        [HttpPost("CreateStore")]
-        public IActionResult CreateStore([FromBody] StoreEntity store)
+        [HttpPost]
+        public async Task<IActionResult> CreateStore(CreateStoreRequest createStoreRequest)
         {
-            var result = _service.InsertStoreAsync(store);
-            return Ok(result);
+            await _service.CreateStoreAsync(createStoreRequest);
+            return Ok("Loja inserida com sucesso.");
         }
 
-        [HttpPut("UpdateStore")]
-        public IActionResult UpdateStore([FromBody] StoreEntity store)
+        [HttpPut]
+        public async Task<IActionResult> UpdateStore(StoreEntity store)
         {
-            var result = _service.UpdateStoreAsync(store);
-            return Ok(result);
+            await _service.UpdateStoreAsync(store);
+            return Ok("Loja atualizada com sucesso.");
         }
 
-        [HttpDelete("DeleteStore/{id}")]
-        public IActionResult DeleteStore([FromQuery]long id)
+        [HttpDelete]
+        public async Task<IActionResult> DeleteStore(long id)
         {
-            var result = _service.DeleteStoreAsync(id);
-            return Ok(result);
+            await _service.DeleteStoreAsync(id);
+            return Ok("Loja excluida com sucesso.");
         }
     }
 }

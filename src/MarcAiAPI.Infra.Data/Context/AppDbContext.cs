@@ -1,48 +1,30 @@
 ﻿using MarcAiAPI.Domain.Entities.Address;
-using MarcAiAPI.Domain.Entities.Category;
-using MarcAiAPI.Domain.Entities.Person;
-using MarcAiAPI.Domain.Entities.Review;
-using MarcAiAPI.Domain.Entities.Seller;
 using MarcAiAPI.Domain.Entities.Store;
-using MarcAiAPI.Domain.Entities.Subcategory;
+using MarcAiAPI.Domain.Entities.User;
 using MarcAiAPI.Infra.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarcAiAPI.Infra.Data.Context;
-
-public class AppDbContext : DbContext
+namespace MarcAiAPI.Infra.Data.Context
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-    
-
-    public DbSet<PersonEntity> Person { get; set; }
-    
-    public DbSet<StoreEntity> Store { get; set; }
-    
-    public DbSet<StoreAddressEntity> StoreAddress { get; set; }
-    
-    public DbSet<CategoryEntity> Category { get; set; }
-    
-    public DbSet<ReviewEntity> Review { get; set; }
-
-    public DbSet<SellerEntity> Seller { get; set; }
-    
-    public DbSet<StorePhoto> StorePhoto { get; set; }
-    
-    public DbSet<SubcategoryEntity> Subcategory { get; set; }
-
-
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public class AppDbContext : DbContext
     {
-        base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfiguration(new PersonMap());
-        modelBuilder.ApplyConfiguration(new StoreMap());
-        modelBuilder.ApplyConfiguration(new StoreAddressMap());
-        modelBuilder.ApplyConfiguration(new CategoryMap());
-        modelBuilder.ApplyConfiguration(new ReviewMap());
-        modelBuilder.ApplyConfiguration(new SellerMap());
-        modelBuilder.ApplyConfiguration(new StorePhotoMap());
-        modelBuilder.ApplyConfiguration(new SubcategoryMap());
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    
+        public DbSet<UserEntity> User { get; set; }
+    
+        public DbSet<StoreEntity> Store { get; set; }
+    
+        public DbSet<StoreAddressEntity> StoreAddress { get; set; }
+    
+        public DbSet<MarketplaceEntity> Marketplace { get; set; }
+    
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new StoreMap());
+            modelBuilder.ApplyConfiguration(new StoreAddressMap());
+            modelBuilder.ApplyConfiguration(new MarketplaceMap());
+        }
     }
 }

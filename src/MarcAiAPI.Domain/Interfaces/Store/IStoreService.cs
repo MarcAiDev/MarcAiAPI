@@ -1,13 +1,15 @@
+using MarcAiAPI.Domain.DTOs;
+using MarcAiAPI.Domain.Entities.Address;
 using MarcAiAPI.Domain.Entities.Store;
 
 namespace MarcAiAPI.Domain.Interfaces.Store
 {
     public interface IStoreService
     {
-        Task InsertStoreAsync(StoreEntity store);
+        Task<List<StoreEntity>> GetStoreAsync(long? storeId, long? marketplaceId, long? sellerId);
+        Task<StoreAddressEntity> GetAddressAsync(long storeId);
+        Task CreateStoreAsync(CreateStoreRequest createStoreRequest);
         Task UpdateStoreAsync(StoreEntity store);
         Task DeleteStoreAsync(long storeId);
-        Task<StoreEntity> GetStoreAsync(long storeId);
-        Task<List<StoreEntity>> GetAllStoresAsync();
     }
 }

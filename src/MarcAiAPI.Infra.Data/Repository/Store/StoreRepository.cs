@@ -1,3 +1,4 @@
+using MarcAiAPI.Domain.DTOs;
 using MarcAiAPI.Domain.Entities.Store;
 using MarcAiAPI.Domain.Interfaces.Store;
 using MarcAiAPI.Infra.Data.Context;
@@ -7,12 +8,24 @@ namespace MarcAiAPI.Infra.Data.Repository.Store
 {
     public class StoreRepository : IStoreRepository
     {
-        private readonly SqlServerContext _context;
+        private readonly AppDbContext _context;
 
-        public StoreRepository(SqlServerContext context)
+        public StoreRepository(AppDbContext context)
         {
             _context = context;
         }
+        public async Task<List<StoreEntity>> GetStore(long? storeId, long? marketplaceId, long? sellerId)
+        {
+            return await _context.Store
+                .Where(s =>
+                    (!storeId.HasValue || s.StoreId == storeId.Value) &&
+                    (!marketplaceId.HasValue || s.MarketplaceId == marketplaceId.Value) &&
+                    (!sellerId.HasValue || s.SellerId == sellerId.Value)
+                )
+                .ToListAsync();
+        }
+
+
         
         public async Task DeleteStore(long storeId)
         {
@@ -21,15 +34,6 @@ namespace MarcAiAPI.Infra.Data.Repository.Store
             await _context.SaveChangesAsync();
         }
 
-        public async Task<StoreEntity> GetStore(long storeId)
-        {
-            return (await _context.Set<StoreEntity>().FindAsync(storeId))!;
-        }
-
-        public Task<List<StoreEntity>> GetAllStores()
-        {
-            return _context.Set<StoreEntity>().ToListAsync();
-        }
 
         public async Task UpdateStore(StoreEntity store)
         {
@@ -37,10 +41,15 @@ namespace MarcAiAPI.Infra.Data.Repository.Store
             await _context.SaveChangesAsync();
         }
 
-        public async Task InsertStore(StoreEntity store)
+        public async Task InsertStore(CreateStoreRequest createStoreRequest)
         {
-            await _context.Set<StoreEntity>().AddAsync(store);
+            _context.Store.Add(createStoreRequest.Store);
+
+            createStoreRequest.Address.StoreId = createStoreRequest.Store.StoreId;
+
+            _context.StoreAddress.Add(createStoreRequest.Address);
             await _context.SaveChangesAsync();
         }
+
     }
 }

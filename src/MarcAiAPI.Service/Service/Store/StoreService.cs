@@ -1,4 +1,6 @@
 using FluentValidation;
+using MarcAiAPI.Domain.DTOs;
+using MarcAiAPI.Domain.Entities.Address;
 using MarcAiAPI.Domain.Entities.Store;
 using MarcAiAPI.Domain.Interfaces.Store;
 
@@ -7,20 +9,34 @@ namespace MarcAiAPI.Service.Service.Store
     public class StoreService : IStoreService
     {
         private readonly IStoreRepository _storeRepository;
+        private readonly IStoreAddressRepository _storeAdressRepository;
         private readonly IValidator<StoreEntity> _validator;
 
-        public StoreService(IStoreRepository storeRepository, IValidator<StoreEntity> validator)
+        public StoreService(IStoreRepository storeRepository, IStoreAddressRepository  storeAddressRepository, IValidator<StoreEntity> validator)
         {
             _storeRepository = storeRepository ?? throw new ArgumentNullException(nameof(storeRepository));
+            _storeAdressRepository = storeAddressRepository ?? throw new ArgumentNullException(nameof(storeAddressRepository));
             _validator = validator ?? throw new ArgumentNullException(nameof(validator));
         }
-
-        public async Task InsertStoreAsync(StoreEntity store)
+        
+        public async Task<List<StoreEntity>> GetStoreAsync(long? storeId, long? marketplaceId, long? sellerId)
         {
-            var validationResult = await _validator.ValidateAsync(store);
-            if (!validationResult.IsValid) throw new ValidationException(validationResult.Errors);
+            return await _storeRepository.GetStore(storeId, marketplaceId, sellerId);
+        }
 
-            await _storeRepository.InsertStore(store);
+        public async Task<StoreAddressEntity> GetAddressAsync(long storeId)
+        {
+            var address = await _storeAdressRepository.GetAddress(storeId);
+            if (address == null)
+                throw new Exception("Endereço não encontrado para esta loja.");
+
+            return address;
+        }
+
+
+        public async Task CreateStoreAsync(CreateStoreRequest createStoreRequest)
+        {
+            await _storeRepository.InsertStore(createStoreRequest);;
         }
 
         public async Task UpdateStoreAsync(StoreEntity store)
@@ -38,16 +54,5 @@ namespace MarcAiAPI.Service.Service.Store
             await _storeRepository.DeleteStore(storeId);
         }
 
-        public async Task<StoreEntity> GetStoreAsync(long storeId)
-        {
-            if (storeId <= 0) throw new ValidationException("ID da loja deve ser maior que zero.");
-
-            return await _storeRepository.GetStore(storeId);
-        }
-
-        public async Task<List<StoreEntity>> GetAllStoresAsync()
-        {
-            return await _storeRepository.GetAllStores();
-        }
     }
 }

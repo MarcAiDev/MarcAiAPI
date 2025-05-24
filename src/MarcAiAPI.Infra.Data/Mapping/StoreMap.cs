@@ -1,34 +1,59 @@
 using MarcAiAPI.Domain.Entities.Address;
-using MarcAiAPI.Domain.Entities.Category;
 using MarcAiAPI.Domain.Entities.Store;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MarcAiAPI.Infra.Data.Mapping;
-
-public class StoreMap : IEntityTypeConfiguration<StoreEntity>
+namespace MarcAiAPI.Infra.Data.Mapping
 {
-    public void Configure(EntityTypeBuilder<StoreEntity> builder)
+    public class StoreMap : IEntityTypeConfiguration<StoreEntity>
     {
-        builder.ToTable("Stores");
+        public void Configure(EntityTypeBuilder<StoreEntity> builder)
+        {
+            builder.ToTable("Stores");
 
-        builder.HasKey(s => s.StoreId);
+            builder.HasKey(s => s.StoreId);
+            
+            builder.Property(a => a.StoreId)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
 
-        builder.Property(s => s.CpfCnpj)
-            .IsRequired()
-            .HasMaxLength(20);
+            builder.Property(s => s.Cnpj)
+                .HasMaxLength(20);
+        
+            builder.Property(s => s.Name)
+                .HasMaxLength(100);
+        
+            builder.Property(s => s.Description)
+                .HasMaxLength(255);
+        
+            builder.Property(s => s.Photo);
+        
+            builder.Property(s => s.Status)
+                .HasMaxLength(50);
+        
+            builder.Property(s => s.Category)
+                .HasMaxLength(50);
+        
+            builder.Property(s => s.SubCategory)
+                .HasMaxLength(50);
 
-        builder.Property(s => s.StoreName)
-            .IsRequired()
-            .HasMaxLength(100);
+            builder
+                .HasOne(s => s.Seller)
+                .WithMany(seller => seller.Stores)
+                .HasForeignKey(s => s.SellerId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        builder.Property(s => s.StoreDescription)
-            .HasMaxLength(255);
+            builder
+                .HasOne(s => s.StoreAddress)
+                .WithOne()
+                .HasForeignKey<StoreAddressEntity>(a => a.StoreId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-        builder.Property(s => s.OpeningHours)
-            .HasMaxLength(100);
-
-        builder.Property(s => s.IsOpen)
-            .IsRequired();
+            builder
+                .HasOne(s => s.Marketplace)
+                .WithMany(m => m.Stores)
+                .HasForeignKey(s => s.MarketplaceId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }
