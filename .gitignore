@@ -81,29 +81,11 @@ secrets.json
 # Teste
 TestResults/
 *.trx
-*.tmp
 *.testsettings
 *.runsettings
 
 # Arquivos de publicação
 Publish/
-
-# Dados do usuário local para o ASP.NET Core
-# Se você usar segredos do usuário (User Secrets), o arquivo secrets.json
-# deve ser ignorado. Ele é gerado no diretório do usuário, não no projeto.
-# Mas se você acidentalmente o colocar no projeto, ignore-o aqui.
-# Isso se aplica se você estiver usando o recurso de "User Secrets" do .NET.
-# Se você tiver um secrets.json no diretório do projeto, é porque ele foi adicionado manualmente.
-# Na maioria dos casos, ele não estará no diretório do projeto e não precisa ser ignorado.
-# No entanto, se você explicitamente adicionar um secrets.json ao seu projeto, então ele deve ser ignorado.
-# A melhor prática é usar o User Secrets para desenvolvimento e variáveis de ambiente/Key Vault para produção.
-# secrets.json
-
-# Logfiles
-*.log
-
-# Npm (se você tiver um frontend embutido)
-node_modules/
 
 # Dotnet tool local
 .config/dotnet-tools.json
