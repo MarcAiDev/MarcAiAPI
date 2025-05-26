@@ -1,5 +1,109 @@
-bin/
+# Arquivos e diretórios gerados pelo IDE (Rider, Visual Studio, VS Code)
+.vs/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.log
+*.ncb
+*.opendb
+*.tlog
+
+# Diretórios de build e pacotes
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+build/
+Build/
+dist/
+Dist/
+*.aps
+*.pch
+*.pdb
+*.optr
+*.exp
+*.lib
+*.ilk
+*.idb
+*.res
+*.sbr
+*.bsc
+*.map
+*.tlb
+*.tlh
+*.tmp
+*.vspscc
+*.vssscc
+*.bak
+*.orig
+*.obj
+*.o
+*.exe
+*.dll
+*.com
+*.ocx
+*.lck
+*.ipch
+
+# Arquivos de pacote e restauração de dependências
+packages/
+*.nupkg
+*.snk
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
+*.csproj.user
+*.vcxproj.user
+*.sln.docstates
+*.resharper
+*.resharper.user
+*.dotsettings
+*.dotsettings.user
+*.cache
+*.vsct
+*.vsdmg
+*.vsp
+*.coverage
+*.dbmdl
+*.dgml
+*.thp
+*.stackdump
+
+# Outros arquivos temporários e de configuração
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.json.bak
+appsettings.json.orig
+secrets.json
+*.runtimeconfig.dev.json
+
+# Teste
+TestResults/
+*.trx
+*.tmp
+*.testsettings
+*.runsettings
+
+# Arquivos de publicação
+Publish/
+
+# Dados do usuário local para o ASP.NET Core
+# Se você usar segredos do usuário (User Secrets), o arquivo secrets.json
+# deve ser ignorado. Ele é gerado no diretório do usuário, não no projeto.
+# Mas se você acidentalmente o colocar no projeto, ignore-o aqui.
+# Isso se aplica se você estiver usando o recurso de "User Secrets" do .NET.
+# Se você tiver um secrets.json no diretório do projeto, é porque ele foi adicionado manualmente.
+# Na maioria dos casos, ele não estará no diretório do projeto e não precisa ser ignorado.
+# No entanto, se você explicitamente adicionar um secrets.json ao seu projeto, então ele deve ser ignorado.
+# A melhor prática é usar o User Secrets para desenvolvimento e variáveis de ambiente/Key Vault para produção.
+# secrets.json
+
+# Logfiles
+*.log
+
+# Npm (se você tiver um frontend embutido)
+node_modules/
+
+# Dotnet tool local
+.config/dotnet-tools.json
