@@ -9,7 +9,7 @@ namespace MarcAiAPI.Infra.Data.Context
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=dbo_marcai;Username=postgres;Password=123");
+            optionsBuilder.UseNpgsql("Server=marcai.postgres.database.azure.com;Database=postgres;Port=5432;User Id=marcai;Password=m4rc41*123;Ssl Mode=Require;");
         
             return new AppDbContext(optionsBuilder.Options);
         }
