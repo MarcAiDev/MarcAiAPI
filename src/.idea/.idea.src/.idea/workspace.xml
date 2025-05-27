@@ -10,10 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b78db76-7430-4a76-8283-80196ba4a951" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Controllers/Person/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/Controllers/Person/UserController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="3b78db76-7430-4a76-8283-80196ba4a951" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +57,7 @@
     ".NET Launch Settings Profile.MarcAiAPI: IIS Express.executor": "Run",
     ".NET Launch Settings Profile.MarcAiAPI: http.executor": "Run",
     ".NET Launch Settings Profile.MarcAiAPI: https.executor": "Run",
+    "Azure - Web App.Publish MarcAiAPI.Application to Azure (1).executor": "Run",
     "Azure - Web App.Publish MarcAiAPI.Application to Azure.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -76,6 +74,21 @@
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MarcAiAPI: http">
+    <configuration name="Publish MarcAiAPI.Application to Azure (1)" type="AzureWebAppDeploy">
+      <option name="appServicePlanName" value="ASP-marcaigroup-8258" />
+      <option name="appServicePlanResourceGroupName" value="marcai-group" />
+      <option name="operatingSystem" value="Windows" />
+      <option name="pricingSize" value="F1" />
+      <option name="pricingTier" value="Free" />
+      <option name="projectConfiguration" value="Release" />
+      <option name="projectPlatform" value="Any CPU" />
+      <option name="publishableProjectPath" value="$PROJECT_DIR$/MarcAiAPI.Application/MarcAiAPI.Application.csproj" />
+      <option name="region" value="brazilsouth" />
+      <option name="resourceGroupName" value="marcai-group" />
+      <option name="subscriptionId" value="575f5cc4-eb2e-4fcd-b3d8-71a862e5919e" />
+      <option name="webAppName" value="marcAi" />
+      <method v="2" />
+    </configuration>
     <configuration name="Publish MarcAiAPI.Application to Azure" type="AzureWebAppDeploy">
       <option name="appServicePlanName" value="ASP-marcaigroup-8258" />
       <option name="appServicePlanResourceGroupName" value="marcai-group" />
@@ -198,7 +211,7 @@
       <workItem from="1748046807303" duration="9618000" />
       <workItem from="1748092425804" duration="15969000" />
       <workItem from="1748302446447" duration="2765000" />
-      <workItem from="1748306272127" duration="1358000" />
+      <workItem from="1748306272127" duration="1676000" />
     </task>
     <servers />
   </component>

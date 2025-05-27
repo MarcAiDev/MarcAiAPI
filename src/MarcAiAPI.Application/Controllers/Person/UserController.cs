@@ -15,7 +15,7 @@ namespace MarcAiAPI.Application.Controllers.Person
             _service = service;
         }
 
-        [HttpGet("")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetUser([FromQuery] long? id) 
         {
             var result = await _service.GetUserAsync(id);
