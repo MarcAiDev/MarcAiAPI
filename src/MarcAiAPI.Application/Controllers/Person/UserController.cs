@@ -15,21 +15,21 @@ namespace MarcAiAPI.Application.Controllers.Person
             _service = service;
         }
 
-        [HttpGet]
+        [HttpGet("")]
         public async Task<IActionResult> GetUser([FromQuery] long? id) 
         {
             var result = await _service.GetUserAsync(id);
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateUser([FromBody] UserEntity user)
         {
             await _service.InsertUserAsync(user);
             return Ok("Usuario inserido com sucesso.");
         }
 
-        [HttpPut]
+        [HttpPut("update")]
         public async Task<IActionResult> UpdatePerson([FromBody] UserEntity user)
         {
             await _service.UpdateUserAsync(user);

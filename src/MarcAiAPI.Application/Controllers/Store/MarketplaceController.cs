@@ -14,7 +14,7 @@ namespace MarcAiAPI.Application.Controllers.Store
             _service = service;
         }
 
-        [HttpGet]
+        [HttpGet("search")]
         public async Task<IActionResult> GetMarketplaces([FromQuery] long? id, string? name)
         {
             var result = await _service.GetMarketplacesAsync(id, name);
