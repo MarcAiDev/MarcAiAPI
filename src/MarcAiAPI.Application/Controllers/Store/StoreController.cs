@@ -1,7 +1,7 @@
-using MarcAiAPI.Domain.DTOs;
 using MarcAiAPI.Domain.Entities.Address;
 using MarcAiAPI.Domain.Entities.Store;
 using MarcAiAPI.Domain.Interfaces.Store;
+using MarcAiAPI.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarcAiAPI.Application.Controllers.Store

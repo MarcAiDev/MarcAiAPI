@@ -1,6 +1,6 @@
-using MarcAiAPI.Domain.DTOs;
 using MarcAiAPI.Domain.Entities.Address;
 using MarcAiAPI.Domain.Entities.Store;
+using MarcAiAPI.Domain.Models;
 
 namespace MarcAiAPI.Domain.Interfaces.Store
 {

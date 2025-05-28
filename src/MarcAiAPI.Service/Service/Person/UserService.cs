@@ -1,6 +1,8 @@
 using FluentValidation;
 using MarcAiAPI.Domain.Entities.User;
 using MarcAiAPI.Domain.Interfaces.Person;
+using MarcAiAPI.Domain.Mapper;
+using MarcAiAPI.Domain.Models.User;
 
 namespace MarcAiAPI.Service.Service.Person
 {
@@ -21,24 +23,20 @@ namespace MarcAiAPI.Service.Service.Person
             return users.ToList(); 
         }
 
-        public async Task InsertUserAsync(UserEntity user)
+        public async Task InsertUserAsync(UserRequestAddModel user)
         {
-            var validationResult = await _validator.ValidateAsync(user);
-            if (!validationResult.IsValid) throw new ValidationException(validationResult.Errors);
-            await _userRepository.InsertPerson(user);
+            await _userRepository.InsertPerson(user.ToEntityAdd());        
         }
 
-        public async Task UpdateUserAsync(UserEntity user)
+        public async Task UpdateUserAsync(UserResquestUpdateModel user)
         {
-            var validationResult = await _validator.ValidateAsync(user);
-            if (!validationResult.IsValid) throw new ValidationException(validationResult.Errors);
-            await _userRepository.UpdatePerson(user);
+            await _userRepository.UpdatePerson(user.ToEntityUpdate());
         }
 
-        public async Task DeleteUserAsync(long personId)
+        public async Task DeleteUserAsync(long userId)
         {
-            if (personId <= 0) throw new ValidationException("ID da pessoa deve ser maior que zero.");
-            await _userRepository.DeletePerson(personId);
+            if (userId <= 0) throw new ValidationException("ID da pessoa deve ser maior que zero.");
+            await _userRepository.DeletePerson(userId);
         }
     }
 }

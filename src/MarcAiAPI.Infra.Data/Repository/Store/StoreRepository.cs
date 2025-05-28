@@ -1,6 +1,6 @@
-using MarcAiAPI.Domain.DTOs;
 using MarcAiAPI.Domain.Entities.Store;
 using MarcAiAPI.Domain.Interfaces.Store;
+using MarcAiAPI.Domain.Models;
 using MarcAiAPI.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,7 +24,6 @@ namespace MarcAiAPI.Infra.Data.Repository.Store
                 )
                 .ToListAsync();
         }
-
 
         
         public async Task DeleteStore(long storeId)

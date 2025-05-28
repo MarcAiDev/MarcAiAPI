@@ -30,7 +30,6 @@ namespace MarcAiAPI.Infra.Data.Repository.User
                 )
                 .ToListAsync();
         }
-
         
         public async Task InsertPerson(UserEntity user)
         {

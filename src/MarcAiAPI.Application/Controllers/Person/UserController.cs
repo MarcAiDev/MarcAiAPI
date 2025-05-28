@@ -1,5 +1,6 @@
 using MarcAiAPI.Domain.Entities.User;
 using MarcAiAPI.Domain.Interfaces.Person;
+using MarcAiAPI.Domain.Models.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarcAiAPI.Application.Controllers.Person
@@ -23,14 +24,14 @@ namespace MarcAiAPI.Application.Controllers.Person
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateUser([FromBody] UserEntity user)
+        public async Task<IActionResult> CreateUser([FromBody] UserRequestAddModel user)
         {
             await _service.InsertUserAsync(user);
             return Ok("Usuario inserido com sucesso.");
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdatePerson([FromBody] UserEntity user)
+        public async Task<IActionResult> UpdatePerson([FromBody] UserResquestUpdateModel user)
         {
             await _service.UpdateUserAsync(user);
             return Ok("Usuario atualizado com sucesso.");

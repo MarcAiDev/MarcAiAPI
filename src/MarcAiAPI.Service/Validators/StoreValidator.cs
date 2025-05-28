@@ -1,5 +1,4 @@
 using FluentValidation;
-using MarcAiAPI.Domain.DTOs;
 using MarcAiAPI.Domain.Entities.Store;
 
 namespace MarcAiAPI.Service.Validators

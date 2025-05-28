@@ -1,7 +1,7 @@
 using MarcAiAPI.Domain.Entities.Address;
 using MarcAiAPI.Domain.Entities.Store;
 
-namespace MarcAiAPI.Domain.DTOs
+namespace MarcAiAPI.Domain.Models
 {
     public class CreateStoreRequest
     {
