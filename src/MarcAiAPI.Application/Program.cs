@@ -5,22 +5,21 @@ using MarcAiAPI.Infra.Data.Repository.Store;
 using MarcAiAPI.Service.Service.Person;
 using MarcAiAPI.Service.Service.Store;
 using Microsoft.EntityFrameworkCore;
-using FluentValidation;
-using MarcAiAPI.Domain.Entities.Store;
-using MarcAiAPI.Domain.Entities.User;
 using MarcAiAPI.Domain.Interfaces.Marketplace;
 using MarcAiAPI.Infra.Data.Repository.User;
-using MarcAiAPI.Service.Validators;
+using MarcAiAPI.Service.I.A;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient<ClassificationApiService>(client =>
+{
+    // Define a URL base da API
+    client.BaseAddress = new Uri("http://localhost:5000/");
+});
 
 // Add DbContext with PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Register FluentValidation validators explicitly
-builder.Services.AddScoped<IValidator<UserEntity>, UserValidator>();
-builder.Services.AddScoped<IValidator<StoreEntity>, StoreValidator>();
 
 // Add controller and Swagger services
 builder.Services.AddControllers();
@@ -40,6 +39,13 @@ builder.Services.AddScoped<IStoreService, StoreService>();
 builder.Services.AddScoped<IMarketplaceService, MarketplaceService>();
 
 var app = builder.Build();
+
+
+// Obtém o serviço do container de DI e executa o método
+var apiService = app.Services.GetRequiredService<ClassificationApiService>();
+
+// Chama o método para um usuário com ID 1, por exemplo
+await apiService.SendClassificationRequestAsync(1);
 
 // Configure HTTP pipeline
 if (app.Environment.IsDevelopment())

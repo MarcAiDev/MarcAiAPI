@@ -38,8 +38,6 @@ namespace MarcAiAPI.Infra.Data.Mapping
                 .IsRequired()
                 .HasMaxLength(255);
         
-            builder.Property(p => p.SellerId);
-        
             builder
                 .HasMany(p => p.Stores)
                 .WithOne(s => s.Seller)

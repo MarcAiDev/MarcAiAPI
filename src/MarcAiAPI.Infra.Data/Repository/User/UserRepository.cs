@@ -23,12 +23,13 @@ namespace MarcAiAPI.Infra.Data.Repository.User
         
         public async Task<List<UserEntity>> GetSeller(long? sellerId)
         {
-            return await _context.User
-                .Where(u =>
-                    (sellerId.HasValue && u.SellerId == sellerId.Value) ||
-                    (!sellerId.HasValue && u.SellerId != null)
-                )
-                .ToListAsync();
+            // return await _context.User
+            //     .Where(u =>
+            //         (sellerId.HasValue && u.SellerId == sellerId.Value) ||
+            //         (!sellerId.HasValue && u.SellerId != null)
+            //     )
+            //     .ToListAsync();
+            throw new NotImplementedException();
         }
         
         public async Task InsertPerson(UserEntity user)

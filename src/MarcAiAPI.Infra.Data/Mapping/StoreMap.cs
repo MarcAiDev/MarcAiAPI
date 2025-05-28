@@ -28,13 +28,9 @@ namespace MarcAiAPI.Infra.Data.Mapping
         
             builder.Property(s => s.Photo);
         
-            builder.Property(s => s.Status)
-                .HasMaxLength(50);
+            builder.Property(s => s.IsActive);
         
             builder.Property(s => s.Category)
-                .HasMaxLength(50);
-        
-            builder.Property(s => s.SubCategory)
                 .HasMaxLength(50);
 
             builder
