@@ -41,10 +41,10 @@ namespace MarcAiAPI.Infra.Data.Mapping
                 .HasMaxLength(50);
 
             builder.Property(a => a.Latitude)
-                .IsRequired();
+                .HasMaxLength(30);
 
             builder.Property(a => a.Longitude)
-                .IsRequired();
+                .HasMaxLength(30);
         }
     }
 }

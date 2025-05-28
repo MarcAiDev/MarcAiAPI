@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using MarcAiAPI.Domain.Entities.Address;
+using MarcAiAPI.Domain.Entities.Seller;
 using MarcAiAPI.Domain.Entities.User;
 
 namespace MarcAiAPI.Domain.Entities.Store
@@ -14,10 +15,10 @@ namespace MarcAiAPI.Domain.Entities.Store
         public string? Description { get; set; }
         public string? Photo { get; set; }
         public bool IsActive { get; set; }
-        public string? Category { get; set; }
+        public List<string?> Category { get; set; }
 
         [JsonIgnore]
-        public UserEntity? Seller { get; set; }
+        public SellerEntity? Seller { get; set; } 
         [JsonIgnore]
         public StoreAddressEntity? StoreAddress { get; set; }
         [JsonIgnore]

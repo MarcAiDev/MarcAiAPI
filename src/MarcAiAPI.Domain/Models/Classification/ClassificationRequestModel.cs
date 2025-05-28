@@ -1,6 +1,10 @@
-namespace MarcAiAPI.Domain.Models.Classification;
+using MarcAiAPI.Domain.Entities.Store;
 
-public class ClassificationRequestModel
+namespace MarcAiAPI.Domain.Models.Classification
 {
-    
+    public class ClassificationRequestModel
+    {
+        public List<string> Preferences { get; set; } = new List<string>();
+        public List<StoreEntity> Stores { get; set; } = new List<StoreEntity>();
+    }
 }

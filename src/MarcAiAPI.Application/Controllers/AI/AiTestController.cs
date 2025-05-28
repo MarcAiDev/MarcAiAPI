@@ -20,7 +20,7 @@ public class AiTestController : ControllerBase
     [HttpPost("classify-stores")]
     public async Task<IActionResult> ClassifyStores([FromBody] AIClassificationRequest request)
     {
-        if (request == null || request.Preferences == null || request.Stores == null)
+        if (request?.Preferences == null)
         {
             _logger.LogWarning("Requisição para classificar lojas recebida com corpo inválido.");
             return BadRequest(new
@@ -31,30 +31,28 @@ public class AiTestController : ControllerBase
             "Iniciando classificação de {StoreCount} lojas com base em {PreferenceCount} preferências.",
             request.Stores.Count, request.Preferences.Count);
 
-        AIClassificationResponse? serviceResponse =
+        var serviceResponse =
             await _classificationApiService.ClassifyStoresAsync(request.Preferences, request.Stores);
 
-        if (serviceResponse == null)
+        switch (serviceResponse)
         {
-            _logger.LogError("Serviço de classificação retornou uma resposta nula.");
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                new { message = "Serviço de IA retornou uma resposta inesperada (nula)." });
+            case null:
+                _logger.LogError("Serviço de classificação retornou uma resposta nula.");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Serviço de IA retornou uma resposta inesperada (nula)." });
+            case { Status: "success", Result: not null }:
+                _logger.LogInformation("Lojas classificadas com sucesso. Retornando {SortedStoreCount} lojas.",
+                    serviceResponse.Result.SortedStores.Count);
+                return Ok(serviceResponse.Result); // AIClassificationResult
+            default:
+                _logger.LogError("Falha na classificação pelo serviço de IA. Status: {Status}, Mensagem: {Message}",
+                    serviceResponse.Status, serviceResponse.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        status = serviceResponse.Status,
+                        message = serviceResponse.Message ?? "Erro desconhecido do serviço de IA."
+                    });
         }
-
-        if (serviceResponse.Status == "success" && serviceResponse.Result != null)
-        {
-            _logger.LogInformation("Lojas classificadas com sucesso. Retornando {SortedStoreCount} lojas.",
-                serviceResponse.Result.SortedStores.Count);
-            return Ok(serviceResponse.Result); // Contém AIClassificationResult
-        }
-
-        _logger.LogError("Falha na classificação pelo serviço de IA. Status: {Status}, Mensagem: {Message}",
-            serviceResponse.Status, serviceResponse.Message);
-        return StatusCode(StatusCodes.Status500InternalServerError,
-            new
-            {
-                status = serviceResponse.Status,
-                message = serviceResponse.Message ?? "Erro desconhecido do serviço de IA."
-            });
     }
 }

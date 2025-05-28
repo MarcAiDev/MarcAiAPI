@@ -10,13 +10,11 @@ namespace MarcAiAPI.Service.Service.Store
     {
         private readonly IStoreRepository _storeRepository;
         private readonly IStoreAddressRepository _storeAdressRepository;
-        private readonly IValidator<StoreEntity> _validator;
 
-        public StoreService(IStoreRepository storeRepository, IStoreAddressRepository  storeAddressRepository, IValidator<StoreEntity> validator)
+        public StoreService(IStoreRepository storeRepository, IStoreAddressRepository  storeAddressRepository)
         {
             _storeRepository = storeRepository ?? throw new ArgumentNullException(nameof(storeRepository));
             _storeAdressRepository = storeAddressRepository ?? throw new ArgumentNullException(nameof(storeAddressRepository));
-            _validator = validator ?? throw new ArgumentNullException(nameof(validator));
         }
         
         public async Task<List<StoreEntity>> GetStoreAsync(long? storeId, long? marketplaceId, long? sellerId)
@@ -41,9 +39,6 @@ namespace MarcAiAPI.Service.Service.Store
 
         public async Task UpdateStoreAsync(StoreEntity store)
         {
-            var validationResult = await _validator.ValidateAsync(store);
-            if (!validationResult.IsValid) throw new ValidationException(validationResult.Errors);
-
             await _storeRepository.UpdateStore(store);
         }
 

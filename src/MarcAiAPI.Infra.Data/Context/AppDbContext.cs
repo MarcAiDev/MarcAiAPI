@@ -1,4 +1,5 @@
 ﻿using MarcAiAPI.Domain.Entities.Address;
+using MarcAiAPI.Domain.Entities.Seller;
 using MarcAiAPI.Domain.Entities.Store;
 using MarcAiAPI.Domain.Entities.User;
 using MarcAiAPI.Infra.Data.Mapping;
@@ -17,12 +18,14 @@ namespace MarcAiAPI.Infra.Data.Context
         public DbSet<StoreAddressEntity> StoreAddress { get; set; }
     
         public DbSet<MarketplaceEntity> Marketplace { get; set; }
+        public DbSet<SellerEntity> Seller { get; set; }
     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new StoreMap());
+            modelBuilder.ApplyConfiguration(new SellerMap());
             modelBuilder.ApplyConfiguration(new StoreAddressMap());
             modelBuilder.ApplyConfiguration(new MarketplaceMap());
         }

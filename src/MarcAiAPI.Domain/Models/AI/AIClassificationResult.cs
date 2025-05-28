@@ -1,6 +1,9 @@
-namespace MarcAiAPI.Domain.Models.AI;
+using System.Text.Json.Serialization;
 
-public class AIClassificationResult
+namespace MarcAiAPI.Domain.Models.AI
 {
-    
+    public class AIClassificationResult
+    {
+        [JsonPropertyName("sorted_stores")]
+        public List<StoreDataForAI> SortedStores { get; set; } = new();    }
 }
