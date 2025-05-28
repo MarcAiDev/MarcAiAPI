@@ -1,53 +1,86 @@
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
 using MarcAiAPI.Domain.Interfaces.Person;
 using MarcAiAPI.Domain.Interfaces.Store;
+using MarcAiAPI.Domain.Interfaces.Marketplace;
 using MarcAiAPI.Infra.Data.Context;
+using MarcAiAPI.Infra.Data.Repository.User;
 using MarcAiAPI.Infra.Data.Repository.Store;
 using MarcAiAPI.Service.Service.Person;
-using MarcAiAPI.Service.Service.Store;
-using Microsoft.EntityFrameworkCore;
-using MarcAiAPI.Domain.Interfaces.Marketplace;
-using MarcAiAPI.Infra.Data.Repository.User;
-using MarcAiAPI.Service.I.A;
+using MarcAiAPI.Service.Service.Store; 
+using MarcAiAPI.Service.I.A; 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient<ClassificationApiService>(client =>
 {
-    // Define a URL base da API
-    client.BaseAddress = new Uri("http://localhost:5000/");
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ClassificationApiServiceUrl") ?? "http://localhost:5000/");
 });
 
-// Add DbContext with PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add controller and Swagger services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Repositories
+var frontendAppUrl = builder.Configuration.GetValue<string>("FrontendAppUrl") ?? "http://localhost:3000";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMyFrontend",
+        policy =>
+        {
+            policy.WithOrigins(frontendAppUrl)
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
+// Repositórios
 builder.Services.AddScoped<IStoreAddressRepository, StoreAddressRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStoreRepository, StoreRepository>();
 builder.Services.AddScoped<IMarketplaceRepository, MarketplaceRepository>();
 
-
-// Services
+// Serviços de Negócio
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IStoreService, StoreService>();
 builder.Services.AddScoped<IMarketplaceService, MarketplaceService>();
 
+// Application Insights
+builder.Services.AddApplicationInsightsTelemetry();
+
 var app = builder.Build();
 
 
-// Obtém o serviço do container de DI e executa o método
-var apiService = app.Services.GetRequiredService<ClassificationApiService>();
+if (app.Environment.IsDevelopment())
+{
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogInformation("Aplicação iniciando em ambiente de Desenvolvimento.");
+    // Se você realmente precisar testar a injeção de ClassificationApiService no startup:
+    // try
+    // {
+    //     var classApiServiceForTest = app.Services.GetRequiredService<ClassificationApiService>();
+    //     logger.LogInformation("ClassificationApiService resolvido com sucesso no startup para teste.");
+    // }
+    // catch (Exception ex)
+    // {
+    //     var loggerEx = app.Services.GetRequiredService<ILogger<Program>>();
+    //     loggerEx.LogError(ex, "Erro ao tentar resolver ClassificationApiService no startup.");
+    // }
+}
 
-// Chama o método para um usuário com ID 1, por exemplo
-await apiService.SendClassificationRequestAsync(1);
+app.UseForwardedHeaders();
 
-// Configure HTTP pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -55,6 +88,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseCors("AllowMyFrontend");
 app.UseAuthorization();
 app.MapControllers();
 

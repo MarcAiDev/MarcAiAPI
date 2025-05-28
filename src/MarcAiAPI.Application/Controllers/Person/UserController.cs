@@ -43,5 +43,12 @@ namespace MarcAiAPI.Application.Controllers.Person
             await _service.DeleteUserAsync(id);
             return Ok("Usuario removido com sucesso.");
         }
+        
+        [HttpGet("/health")] // Define a rota como /health na raiz da API
+        [ApiExplorerSettings(IgnoreApi = true)] // Opcional: esconde do Swagger se não quiser expor lá
+        public IActionResult HealthCheck()
+        {
+            return Ok("Healthy");
+        }
     }
 }

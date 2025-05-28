@@ -9,8 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.13"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4"/>
+        <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.13" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,12 +20,12 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MarcAiAPI.Infra.Data\MarcAiAPI.Infra.Data.csproj"/>
-        <ProjectReference Include="..\MarcAiAPI.Service\MarcAiAPI.Service.csproj"/>
+        <ProjectReference Include="..\MarcAiAPI.Infra.Data\MarcAiAPI.Infra.Data.csproj" />
+        <ProjectReference Include="..\MarcAiAPI.Service\MarcAiAPI.Service.csproj" />
     </ItemGroup>
 
 </Project>
