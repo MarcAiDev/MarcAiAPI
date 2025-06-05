@@ -12,28 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3b78db76-7430-4a76-8283-80196ba4a951" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Address/StoreAddressEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Seller/SellerEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/Store/StoreEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/User/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Entities/User/UserEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/AIClassificationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/AIClassificationRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/AIClassificationResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/AIClassificationResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/AIClassificationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/AIClassificationResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/StoreDataForAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/AI/StoreDataForAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/Classification/ClassificationRequestModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/Classification/ClassificationRequestModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/Classification/ClassificationResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/Classification/ClassificationResponseModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/Classification/ClassificationResultData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Models/Classification/ClassificationResultData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/SellerMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreAddressMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/StoreMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/UserMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Mapping/UserMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Application/Controllers/Person/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Application/Controllers/Person/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/Person/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/Person/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/Person/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Domain/Interfaces/Person/IUserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Repository/User/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Infra.Data/Repository/User/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/I.A/ClassificationApiService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Service/I.A/ClassificationApiService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/MarcAiAPI.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Service/MarcAiAPI.Service.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/Service/Person/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Service/Service/Person/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcAiAPI.Service/Service/Store/StoreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MarcAiAPI.Service/Service/Store/StoreService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,30 +59,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.MarcAiAPI: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.MarcAiAPI: http.executor": "Run",
-    ".NET Launch Settings Profile.MarcAiAPI: https.executor": "Run",
-    "Azure - Web App.Publish MarcAiAPI.Application to Azure (1).executor": "Run",
-    "Azure - Web App.Publish MarcAiAPI.Application to Azure.executor": "Run",
-    "Azure - Web App.Publish src to Azure (1).executor": "Run",
-    "Azure - Web App.Publish src to Azure (2).executor": "Run",
-    "Azure - Web App.Publish src to Azure.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.MarcAiAPI: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.MarcAiAPI: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.MarcAiAPI: https.executor&quot;: &quot;Run&quot;,
+    &quot;Azure - Web App.Publish MarcAiAPI.Application to Azure (1).executor&quot;: &quot;Run&quot;,
+    &quot;Azure - Web App.Publish MarcAiAPI.Application to Azure.executor&quot;: &quot;Run&quot;,
+    &quot;Azure - Web App.Publish src to Azure (1).executor&quot;: &quot;Run&quot;,
+    &quot;Azure - Web App.Publish src to Azure (2).executor&quot;: &quot;Run&quot;,
+    &quot;Azure - Web App.Publish src to Azure.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MarcAiAPI: http">
     <configuration name="Publish MarcAiAPI.Application to Azure (1)" type="AzureWebAppDeploy">
       <option name="appServicePlanName" value="ASP-marcaigroup-8258" />
@@ -287,6 +270,7 @@
       <workItem from="1748393783677" duration="522000" />
       <workItem from="1748394475582" duration="11008000" />
       <workItem from="1748407415527" duration="8562000" />
+      <workItem from="1749087284312" duration="968000" />
     </task>
     <servers />
   </component>

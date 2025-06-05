@@ -16,10 +16,10 @@ namespace MarcAiAPI.Application.Controllers.Person
             _service = service;
         }
 
-        [HttpGet("all")]
-        public async Task<IActionResult> GetUser([FromQuery] long? id) 
+        [HttpGet("login")]
+        public async Task<IActionResult> GetUser([FromQuery] string email, string password) 
         {
-            var result = await _service.GetUserAsync(id);
+            var result = await _service.LoginAsync(email, password);
             return Ok(result);
         }
 

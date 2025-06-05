@@ -15,9 +15,9 @@ namespace MarcAiAPI.Service.Service.Person
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
-        public async Task<List<UserEntity>> GetUserAsync(long? userId)
+        public async Task<IEnumerable<UserEntity>> LoginAsync(string email, string password)
         {
-            var users = await _userRepository.GetUser(userId);
+            var users = await _userRepository.LoginAsync(email, password);
             return users; 
         }
 

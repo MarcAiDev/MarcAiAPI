@@ -5,7 +5,7 @@ namespace MarcAiAPI.Domain.Interfaces.Person
 {
     public interface IUserService
     {
-        Task<List<UserEntity>> GetUserAsync(long? userId);
+        Task<IEnumerable<UserEntity>> LoginAsync(string email, string password);
         Task InsertUserAsync(UserRequestAddModel user);
         Task UpdateUserAsync(UserResquestUpdateModel user);
         Task DeleteUserAsync(long userId);

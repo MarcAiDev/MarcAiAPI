@@ -14,10 +14,10 @@ namespace MarcAiAPI.Infra.Data.Repository.User
             _context = context;
         }
         
-        public async Task<List<UserEntity>> GetUser(long? id)
+        public async Task<IEnumerable<UserEntity>> LoginAsync(string email, string password)
         {
             return await _context.User
-                .Where(u => !id.HasValue || u.UserId == id.Value)
+                .Where(u => u.Email == email && u.Password == password)
                 .ToListAsync();
         }
         
