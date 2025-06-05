@@ -8,14 +8,9 @@ using MarcAiAPI.Infra.Data.Repository.User;
 using MarcAiAPI.Infra.Data.Repository.Store;
 using MarcAiAPI.Service.Service.Person;
 using MarcAiAPI.Service.Service.Store; 
-using MarcAiAPI.Service.I.A; 
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpClient<ClassificationApiService>(client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ClassificationApiServiceUrl") ?? "http://localhost:5000/");
-});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -66,17 +61,6 @@ if (app.Environment.IsDevelopment())
 {
     var logger = app.Services.GetRequiredService<ILogger<Program>>();
     logger.LogInformation("Aplicação iniciando em ambiente de Desenvolvimento.");
-    // Se você realmente precisar testar a injeção de ClassificationApiService no startup:
-    // try
-    // {
-    //     var classApiServiceForTest = app.Services.GetRequiredService<ClassificationApiService>();
-    //     logger.LogInformation("ClassificationApiService resolvido com sucesso no startup para teste.");
-    // }
-    // catch (Exception ex)
-    // {
-    //     var loggerEx = app.Services.GetRequiredService<ILogger<Program>>();
-    //     loggerEx.LogError(ex, "Erro ao tentar resolver ClassificationApiService no startup.");
-    // }
 }
 
 app.UseForwardedHeaders();

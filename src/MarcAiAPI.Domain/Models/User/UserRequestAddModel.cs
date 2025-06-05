@@ -8,6 +8,6 @@ namespace MarcAiAPI.Domain.Models.User
         public required string Password { get; set; }
         public string? Photo { get; set; }
         public required string Phone { get; set; }
-        public DateTime Birthday { get; set; }
+        public DateOnly Birthday { get; set; }
     }
 }
